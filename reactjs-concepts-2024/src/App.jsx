@@ -5,6 +5,8 @@ import './App.css'
 // import ChangeTextComponent from './components/context-concept/text';
 // import UseReducerExample from './components/use-reducer-example';
 import FormComponent from './components/form';
+import Login from './components/login/Login';
+import Register from './components/Register/Register';
 
 // const dummyProductData = ['Product 1', 'Product 2', 'Product 3'];
 
@@ -17,7 +19,10 @@ function App() {
       <ChangeTextComponent /> */}
       {/* <UseReducerExample /> */}
       <FormComponent />
-      
+      <div style={{ display: 'flex', gap: '10px' }}>
+        <Login />
+        <Register />
+      </div>
     </div>
   )
 }
