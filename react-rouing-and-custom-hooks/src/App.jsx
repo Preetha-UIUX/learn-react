@@ -5,6 +5,7 @@ import CommentList from "./pages/comments/CommentList";
 import RecipeDetailsPage from "./pages/recipe-details/RecipeDetailsPage";
 import PageNotFound from "./pages/not-found/PageNotFound";
 import Layout from "./components/layout/Layout";
+import ReactHookForm from "./pages/reactHookForm/ReactHookForm";
 
 function CustomRoute() {
   const element = useRoutes([
@@ -29,6 +30,10 @@ function CustomRoute() {
     {
       path: '*',
       element: <PageNotFound />
+    },
+    {
+      path: 'react-hook-form',
+      element: <ReactHookForm />
     }
   ])
   return element;
@@ -40,7 +45,7 @@ function App() {
   return (
     <div>
       <h1>React routing and Custom hooks</h1>
-      <div>
+      {/* <div>
         <Link to={'home/recipe-list'}>Alternate way to navigate</Link>
       </div>
       <button 
@@ -54,7 +59,7 @@ function App() {
         onClick={() => navigate('home/comments-list')}  
       >
         View Comments
-      </button>
+      </button> */}
       {/* <Routes>
         <Route path="/home" element={<Layout/>}>
           <Route path="recipe-list" element={<RecipeList />} />
