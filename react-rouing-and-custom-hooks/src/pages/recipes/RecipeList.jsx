@@ -1,18 +1,21 @@
 // import { useLocation } from "react-router-dom"
 import useFetch from "../../hooks/useFetch";
+import useWindowResize from "../../hooks/useWindowResize";
 
 const RecipeList = () => {
   // const location = useLocation();
   // console.log('location',location);
 
   const {data, loading, error} = useFetch('https://dummyjson.com/recipes');
+  const windowSize = useWindowResize();
   console.log('data',data);
 
   if (loading) return (<h3>Fetching recipes! Please Wait...</h3>)
   
   return (
     <div>
-      <h1>Recipe List</h1>
+      <h1 style={{color: windowSize.width < 768 ? 'Red' : 'Black' }}>Recipe List</h1>
+      <p>Current window size width is {windowSize.width} and height is {windowSize.height}</p>
       <ul style={{display: 'flex', flexWrap: 'wrap', gap: '20px'}}>
         {
           data?.recipes?.length > 0 ? (
